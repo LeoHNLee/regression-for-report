@@ -99,6 +99,7 @@ class Reg(object):
             self.show_resid_plot(x)
 
     def show_reg_line(self, x, leverage, scatter=True):
+        fontsize = self.fontsize
         y = self.model_property[0]
 
         fig = plt.figure(figsize=(17,8))
@@ -111,6 +112,7 @@ class Reg(object):
         plt.show()
 
     def show_qq_plot(self):
+        fontsize = self.fontsize
         resid = self.std_resid
         fig = plt.figure(figsize=(17,8))
         stats.probplot(resid, plot=plt)
@@ -119,6 +121,7 @@ class Reg(object):
         plt.show()
 
     def show_pred_resid_plot(self):
+        fontsize = self.fontsize
         x, y = self.pred, self.std_resid
         fig = plt.figure(figsize=(17,8))
         sns.scatterplot(x,y)
@@ -138,6 +141,7 @@ class Reg(object):
         plt.show()
 
     def show_index_resid_plot(self):
+        fontsize = self.fontsize
         x, y = self.df.index, self.std_resid
 
         fig = plt.figure(figsize=(17,8))
@@ -149,6 +153,7 @@ class Reg(object):
         plt.show()
 
     def show_resid_plot(self, x):
+        fontsize = self.fontsize
         fig = plt.figure(figsize=(17,8))
         plt.xlabel('{}'.format(x), fontdict={'fontsize': fontsize,})
         plt.ylabel('Standard Residual', fontdict={'fontsize': fontsize,})
